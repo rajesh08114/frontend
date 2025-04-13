@@ -544,7 +544,9 @@ footer {
 }  
 
 @media (max-width: 480px) {
-
+  *{
+    font-size: 0.9em;
+  }
   
   .search-box {
       flex-direction: column;
