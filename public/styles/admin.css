@@ -449,8 +449,8 @@ footer{
 }
 }
 @media (max-width: 480px) {
-*{
-  font-size: 0.9em;
+.dropdown{
+  font-size: 0.7rem;
 }
 
 
