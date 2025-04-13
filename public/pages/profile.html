@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | Library Management System</title>
+    <link rel="stylesheet" href="../styles/profile.css">
+    <script src="../scripts/profile.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../../images/images.jpg" alt="College Logo">
+                    
+                </div>
+                <div class="title">
+                    <h1>SRKR ENGINEERING COLLEGE</h1>
+                    
+                </div>    
+    
+                <nav>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="#books">Books</a></li>
+
+                        <li><a href="#about">About</a></li>
+                        
+                        
+                        
+                        
+                          
+                          
+                      
+                    </ul>
+                
+               
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="profile-container">
+        <h1 style="text-align: center;">Welcome to Your Profile</h1>
+        
+          
+          <!-- Additional Details Section -->
+          <section class="additional-details">
+            
+                  <div>
+                    <h2 id="user-name">John Doe</h2>
+                    <p id="user-email">john@example.com</p>
+                    
+                  </div>
+                
+             
+            
+            <p><strong>ID:</strong> <span id="employee-id">EMP12345</span></p>
+            <p><strong>Department:</strong> <span id="department">CSE</span></p>
+            <p><strong>Designation:</strong> <span id="designation">Professor</span></p>
+            <p><strong>Phone:</strong> <span id="phone">+1234567890</span></p>
+            <button id="edit-button" class="btn">Edit</button>
+          </section>
+          
+          <!-- Edit Details Section -->
+          <section class="edit-details" id="edit-details">
+            <h2>Edit Details</h2>
+            <form id="editDetailsForm">
+              <label for="edit-employee-id" >Employee ID:</label>
+              <input type="text" id="edit-employee-id" name="employeeId" value="EMP12345" disabled required>
+          
+              <label for="edit-department">Department:</label>
+              <select id="edit-department" name="department" required>
+                <option value="CSE">CSE</option>
+                <option value="OTHER">OTHER</option>
+              </select>
+          
+              <label for="edit-designation">Designation:</label>
+              <select id="edit-designation" name="designation" required>
+                <option value="Professor">Professor</option>
+                <option value="Associate Professor">Associate Professor</option>
+              </select>
+          
+              <label for="edit-phone">Phone:</label>
+              <input type="text" id="edit-phone" name="phone" value="+1234567890" required>
+          
+              <button type="submit">Save Changes</button>
+            </form>
+          </section>
+
+        <section class="profile-section">
+            <h2 style="text-align: center;">Borrowed Books</h2>
+            <div id="borrowed-books" class="books-grid">
+                <!-- Dynamically populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="profile-section">
+            <h2 style="text-align: center;">Fines and Dues</h2>
+            <div id="fines-container">
+                <div class="fine-item">
+                    <span class="fine-description">Late Fee for Book XYZ</span>
+                    <span class="fine-amount">$5.00</span>  
+                </div>  
+
+
+                <div class="fine-summary">
+                    <span>Total Outstanding:</span>
+                    <span id="total-fine">$0.00</span>
+                </div>
+                <div id="fine-details">
+                    <!-- Fine items will be added here -->
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section">
+            <h2 style="text-align: center;">Notifications</h2>
+            <div id="notifications">
+                <!-- Notification items will be added here -->
+            </div>
+        </section>
+    </div>
+    <footer class="footer" id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>The College Library is committed to providing quality resources and services to support the academic and research needs of our students and faculty.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./pages/books.html">Books</a></li>
+                        <li><a href="#features">Services</a></li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Library Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Borrowing</a></li>
+                        <li><a href="#">Renewals</a></li>
+                        <li><a href="#">Reservations</a></li>
+                        <li><a href="#">Interlibrary Loan</a></li>
+                        <li><a href="#">Research Help</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> SKRR ENGINEERING COLLEGE</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bhimavaram, Andhra Pradesh, India</p>
+                    <p><i class="fas fa-phone"></i> 91 (8816) 223332</p>
+                    <p><i class="fas fa-envelope"></i> library@college.edu</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 10:00 PM<br>Sat-Sun: 10:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 College Library Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

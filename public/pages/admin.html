@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../scripts/admin.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../../images/images.jpg" alt="College Logo">
+                    
+                </div>
+                <div class="title">
+                    <h1 style="color: aliceblue;" >SRKR ENGINEERING COLLEGE</h1>
+                    
+                </div>    
+    
+                <nav>
+                    <ul>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="#books">Books</a></li>
+                        
+                        <li><a href="#about">About</a></li>
+                        
+                        <li><a href="../pages/admin.html"><i class="fas fa-user-tie"></i> Admin</a></li>
+                         
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin content goes here -->
+   <div class="admin-content">
+        <h2>Admin Dashboard</h2>
+        <p>Welcome to the admin dashboard. Here you can manage books, book copies, and borrowing.</p>
+    </div>
+
+  
+    <div  class="admin-options">
+        <ul id="nav-list">
+            <li class="dropdown">
+              <a href="#">Book Manage </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Add Book</a></li>
+                <li><a href="#">View Books</a></li>
+                <li><a href="#">Edit Book</a></li>
+                <li><a href="#">Delete Book</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">BookCopy Manage</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Add BookCopy</a></li>
+                <li><a href="#">View BookCopy</a></li>
+                <li><a href="#">Edit BookCopy</a></li>
+                <li><a href="#">Delete BookCopy</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Borrow Manage</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Borrow BookCopy</a></li>
+                <li><a href="#">Update Borrow</a></li>
+                <li><a href="#">Delete Borrow</a></li>
+                <li><a href="#">View Borrow</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+             <a href="#">Fine Mange</a>
+              <ul class="dropdown-menu-1">
+                <li><a href="#">Add Fine</a></li>
+                <li><a href="#">Update Fine</a></li>
+                <li><a href="#">Delete Fine</a></li>
+                <li><a href="#">View Fine</a></li>
+              </ul>
+            </li>
+
+          </ul>
+</div>
+
+<div class="display-section">
+    <div class="info-box">
+        <h2>Manage Your Library</h2>
+        <p>Use the options above to manage books, book copies, and borrowing.</p>
+    </div>
+   <div class="main-conatainer">
+
+    <!-- Add Book Form -->
+    <section class="add-book section-style" id="add-book" style="display: none;">
+      <h2>Add Book</h2>
+      <form id="addBookForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="publisher">Publisher:</label>
+        <input type="text" id="publisher" name="publisher" required>
+
+        <label for="publicationDate">Publication Date:</label>
+        <input type="date" id="publicationDate" name="publicationDate" required>
+
+        <label for="isbn">ISBN:</label>
+        <input type="text" id="isbn" name="isbn" required>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="coverImage">Cover Image:</label>
+        <input type="file" id="coverImage" name="coverImage" required>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+          <option value="available">Available</option>
+          <option value="borrowed">Borrowed</option>
+        </select>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <button type="submit">Add Book</button>
+      </form>
+    </section>
+
+    
+
+    <!-- Update Book Form -->
+    <section class="update-book section-style" id="update-book" style="display: none;">
+      <h2>Update Book</h2>
+      <form id="updateBookForm">
+        <label for="updateBookId">Book ID:</label>
+        <input type="text" id="updateBookId" name="updateBookId" required>
+
+        <label for="updateTitle">Title:</label>
+        <input type="text" id="updateTitle" name="updateTitle">
+
+        <label for="updateAuthor">Author:</label>
+        <input type="text" id="updateAuthor" name="updateAuthor">
+
+        <label for="updateISBN">ISBN:</label>
+        <input type="text" id="updateISBN" name="updateISBN">
+
+        <label for="updateImg">Cover Image:</label>
+        <input type="file" id="updateImg" name="updateImg">
+
+        <label for="updatePublisher">Publisher:</label>
+        <input type="text" id="updatePublisher" name="updatePublisher">
+
+        <label for="updatePublicationDate">Publication Date:</label>
+        <input type="date" id="updatePublicationDate" name="updatePublicationDate">
+
+        <label for="updateGenre">Genre:</label>
+        <input type="text" id="updateGenre" name="updateGenre">
+
+        <label for="updateDescription">Description:</label>
+        <textarea id="updateDescription" name="updateDescription"></textarea>
+
+        <label for="updateStatus">Status:</label>
+        <select id="updateStatus" name="updateStatus">
+          <option value="available">Available</option>
+          <option value="borrowed">Borrowed</option>
+        </select>
+
+        <label for="updateLocation">Location:</label>
+        <input type="text" id="updateLocation" name="updateLocation">
+
+        <button type="submit">Update Book</button>
+      </form>
+    </section>
+
+    <!-- Delete Book Form -->
+    <section class="delete-book section-style" id="delete-book" style="display: none;">
+      <h2>Delete Book</h2>
+      <form id="deleteBookForm">
+        <label for="deleteBookId">Book ID:</label>
+        <input type="text" id="deleteBookId" name="deleteBookId" required>
+        <button type="submit">Delete Book</button>
+      </form>
+    </section>
+
+
+<!-- BookCopy CRUD Operations -->
+
+
+  <!-- Add BookCopy Form -->
+  <section class="add-bookcopy section-style" id="add-bookcopy" style="display: none;">
+    <h3>Add BookCopy</h3>
+    <form id="addBookCopyForm">
+      <label for="bookId">Book Title:</label>
+      <input type="text" id="bookTitle" name="bookId" required>
+
+      <label for="copyNumber">Bar Code:</label>
+      <input type="number" id="copyNumber" name="copyNumber" required>
+
+      <label for="status">Status:</label>
+      <select id="copyStatus" name="status" required>
+        <option value="available">Available</option>
+        <option value="borrowed">Borrowed</option>
+      </select>
+
+      <button type="submit">Add BookCopy</button>
+    </form>
+  </section>
+
+  <!-- Update BookCopy Form -->
+  <section class="update-bookcopy section-style" id="update-bookcopy" style="display: none;">
+    <h3>Update BookCopy</h3>
+    <form id="updateBookCopyForm">
+      <label for="updateCopyId">BookCopy ID:</label>
+      <input type="text" id="updateCopyId" name="updateCopyId" required>
+
+      <label for="updateCopyStatus">Status:</label>
+      <select id="updateCopyStatus" name="status" required>
+        <option  value="available">Available</option>
+        <option value="borrowed">Borrowed</option>
+      </select>
+
+      <button type="submit">Update BookCopy</button>
+    </form>
+  </section>
+
+  <!-- Delete BookCopy Form -->
+  <section class="delete-bookcopy section-style" id="delete-bookcopy" style="display: none;">
+    <h3>Delete BookCopy</h3>
+    <form id="deleteBookCopyForm">
+      <label for="deleteCopyId">BookCopy ID:</label>
+      <input type="text" id="deleteCopyId" name="deleteCopyId" required>
+      <button type="submit">Delete BookCopy</button>
+    </form>
+  </section>
+
+
+
+  
+    <!-- Add Borrow Form -->
+    <section class="add-borrow section-style" id="add-borrow" style="display: none;">
+      <h3>Add Borrow Record</h3>
+      <form id="addBorrowForm">
+        <label for="bookId">BookCopy Title:</label>
+        <input type="text" id="bookId" name="bookId" required>
+  
+        <label for="userId"> ID:</label>
+        <input type="text" id="userId" name="userId" required>
+  
+        <label for="borrowDate">Borrow Date:</label>
+        <input type="date" id="borrowDate" name="borrowDate"  required>
+  
+        <label for="returnDate">Return Date:</label>
+        <input type="date" id="returnDate" name="returnDate" required>
+  
+        <label for="status">Status:</label>
+        <select id="borrowStatus" name="status" required>
+          <option value="borrowed">Borrowed</option>
+          <option value="returned">Returned</option>
+          <option value="overdue">Overdue</option>
+        </select>
+  
+        <button type="submit">Add Borrow Record</button>
+      </form>
+    </section>
+  
+    <!-- Update Borrow Form -->
+    <section id="update-borrow section-style" style="display: none;">
+      <h3>Update Borrow Record</h3>
+      <form id="updateBorrowForm">
+        <label for="borrowId">Borrow Record ID:</label>
+        <input type="text" id="borrowId" name="borrowId" required>
+  
+        <label for="updateStatus">Status:</label>
+        <select id="updateStatus" name="status" required>
+          <option value="borrowed">Borrowed</option>
+          <option value="returned">Returned</option>
+          <option value="overdue">Overdue</option>
+        </select>
+  
+        <button type="submit">Update Borrow Record</button>
+      </form>
+    </section>
+  
+    <!-- Delete Borrow Form -->
+    <section id="delete-borrow section-style" style="display: none;">
+      <h3>Delete Borrow Record</h3>
+      <form id="deleteBorrowForm">
+        <label for="deleteBorrowId">Borrow Record ID:</label>
+        <input type="text" id="deleteBorrowId" name="deleteBorrowId" required>
+        <button type="submit">Delete Borrow Record</button>
+      </form>
+    </section>
+    <!-- Fine Management Forms -->
+
+<!-- Add Fine Form -->
+<section class="add-fine section-style" id="add-fine" style="display: none;">
+  <h3>Add Fine</h3>
+  <form id="addFineForm">
+    <label for="fineUserId">User ID:</label>
+    <input type="text" id="fineUserId" name="fineUserId" required>
+
+    <label for="fineBarcode">BookCopy Barcode:</label>
+    <input type="text" id="fineBarcode" name="fineBarcode" required>
+
+    <label for="fineAmount">Fine Amount:</label>
+    <input type="number" id="fineAmount" name="fineAmount" required>
+
+    <label for="fineReason">Reason:</label>
+    <select id="fineReason" name="fineReason" required>
+      <option value="overdue">Overdue</option>
+      <option value="lost">Lost</option>
+      <option value="damaged">Damaged</option>
+    </select>
+
+    <button type="submit">Add Fine</button>
+  </form>
+</section>
+
+<!-- View Fine by User ID -->
+<section class="view-fine section-style" id="view-fine" style="display: none;">
+  <h3>View Fines by User ID</h3>
+  <form id="viewFineForm">
+    <label for="viewFineUserId">User ID:</label>
+    <input type="text" id="viewFineUserId" name="viewFineUserId" required>
+    <button type="submit">View Fines</button>
+  </form>
+  <div id="fineList">
+    <!-- Fine records will be dynamically loaded here -->
+  </div>
+</section>
+
+<!-- Update Fine Form -->
+<section class="update-fine section-style" id="update-fine" style="display: none;">
+  <h3>Update Fine Status</h3>
+  <form id="updateFineForm">
+    <label for="updateFineUserId">User ID:</label>
+    <input type="text" id="updateFineUserId" name="updateFineUserId" required>
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="updateFinePaid" name="updateFinePaid">
+      <label for="updateFinePaid">Mark as Paid</label>
+    </div>
+
+    <button type="submit">Update Fine</button>
+  </form>
+</section>
+
+<!-- Delete Fine Form -->
+<section class="delete-fine section-style" id="delete-fine" style="display: none;">
+  <h3>Delete Fine by User ID</h3>
+  <form id="deleteFineForm">
+    <label for="deleteFineUserId">User ID:</label>
+    <input type="text" id="deleteFineUserId" name="deleteFineUserId" required>
+    <button type="submit">Delete Fines</button>
+  </form>
+</section>
+
+
+
+
+
+  </div>
+ 
+
+
+</div>
+       
+
+
+
+<footer class="footer" id="about">
+  <div class="container">
+      <div class="footer-content">
+          <div class="footer-column">
+              <h3>About Us</h3>
+              <p>The College Library is committed to providing quality resources and services to support the academic and research needs of our students and faculty.</p>
+              <div class="social-links">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+          <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./pages/books.html">Books</a></li>
+                  <li><a href="#features">Services</a></li>
+                  
+                  
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Library Services</h3>
+              <ul class="footer-links">
+                  <li><a href="#">Borrowing</a></li>
+                  <li><a href="#">Renewals</a></li>
+                  <li><a href="#">Reservations</a></li>
+                  <li><a href="#">Interlibrary Loan</a></li>
+                  <li><a href="#">Research Help</a></li>
+                  
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>Contact Us</h3>
+              <p><i class="fas fa-map-marker-alt"></i> SKRR ENGINEERING COLLEGE</p>
+              <p><i class="fas fa-map-marker-alt"></i> Bhimavaram, Andhra Pradesh, India</p>
+              <p><i class="fas fa-phone"></i> 91 (8816) 223332</p>
+              <p><i class="fas fa-envelope"></i> library@college.edu</p>
+              <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 10:00 PM<br>Sat-Sun: 10:00 AM - 6:00 PM</p>
+          </div>
+      </div>
+      <div class="copyright">
+          <p>&copy; 2025 College Library Management System. All rights reserved.</p>
+      </div>
+  </div>
+</footer>
+    
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+<link rel="stylesheet" href="../styles/register.css".css">
+<script src="../scripts/register.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../../images/images.jpg" alt="College Logo">
+                    
+                </div>
+                <div class="title">
+                    <h1>SRKR ENGINEERING COLLEGE</h1>
+                    
+                </div>    
+    
+                <nav>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        
+                        
+                        
+                        
+                          
+                          
+                      
+                    </ul>
+                
+               
+                </nav>
+            </div>
+        </div>
+    </header>
+
+<div class="main-conatainer">
+
+
+    <h1 style="text-align: center;" >User Registration</h1>
+    
+    <form id="registrationForm">
+<fieldset>
+
+        <!-- Common fields for all user types -->
+        <div class="form-group">
+            <label for="name">Full Name*</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error" id="nameError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error" id="emailError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number*</label>
+            <input type="tel" id="phone" name="phone" required>
+            <div class="error" id="phoneError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password*</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error" id="passwordError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password*</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <div class="error" id="confirmPasswordError"></div>
+        </div>
+        
+        <div class="form-group">
+            <label for="role">User Role*</label>
+            <select id="role" name="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="faculty">Faculty</option>
+                <option value="student">Student</option>
+            </select>
+            <div class="error" id="roleError"></div>
+        </div>
+        
+        <!-- Admin-specific fields -->
+        <div id="adminFields" class="role-specific">
+            <h3>Admin Information</h3>
+            <div class="form-group">
+                <label for="employeeId">Employee ID*</label>
+                <input type="text" id="employeeId" name="employeeId">
+                <div class="error" id="employeeIdError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="adminDepartment">Department*</label>
+                <select id="adminDepartment" name="adminDepartment">
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science & Engineering</option>
+                    <option value="OTHER">Other</option>
+                </select>
+                <div class="error" id="adminDepartmentError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="designation">Designation*</label>
+                <select id="designation" name="designation">
+                    <option value="">Select Designation</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Associate Professor">Associate Professor</option>
+                </select>
+                <div class="error" id="designationError"></div>
+            </div>
+        </div>
+        
+        <!-- Faculty-specific fields -->
+        <div id="facultyFields" class="role-specific">
+            <h3>Faculty Information</h3>
+            <div class="form-group">
+                <label for="facultyEmployeeId">Employee ID*</label>
+                <input type="text" id="facultyEmployeeId" name="facultyEmployeeId">
+                <div class="error" id="facultyEmployeeIdError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="facultyDepartment">Department*</label>
+                <select id="facultyDepartment" name="facultyDepartment">
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science & Engineering</option>
+                    <option value="OTHER">Other</option>
+                </select>
+                <div class="error" id="facultyDepartmentError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="facultyDesignation">Designation*</label>
+                <select id="facultyDesignation" name="facultyDesignation">
+                    <option value="">Select Designation</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Associate Professor">Associate Professor</option>
+                </select>
+                <div class="error" id="facultyDesignationError"></div>
+            </div>
+        </div>
+        
+        <!-- Student-specific fields -->
+        <div id="studentFields" class="role-specific">
+            <h3>Student Information</h3>
+            <div class="form-group">
+                <label for="rollNumber">Roll Number*</label>
+                <input type="text" id="rollNumber" name="rollNumber">
+                <div class="error" id="rollNumberError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="studentDepartment">Department*</label>
+                <select id="studentDepartment" name="studentDepartment">
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science & Engineering</option>
+                    <option value="AIML">Artificial Intelligence & Machine Learning</option>
+                    <option value="CIC">Cloud Computing & IoT</option>
+                    <option value="OTHER">Other</option>
+                </select>
+                <div class="error" id="studentDepartmentError"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="batchYear">Batch Year*</label>
+                <input type="number" id="batchYear" name="batchYear" min="2000" max="2099">
+                <div class="error" id="batchYearError"></div>
+            </div>
+        </div>
+        
+        <button type="submit">Register</button>
+    </fieldset>
+    </form>
+
+</div>
+<footer class="footer" id="about">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>The College Library is committed to providing quality resources and services to support the academic and research needs of our students and faculty.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./pages/books.html">Books</a></li>
+                    <li><a href="#features">Services</a></li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Library Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Borrowing</a></li>
+                    <li><a href="#">Renewals</a></li>
+                    <li><a href="#">Reservations</a></li>
+                    <li><a href="#">Interlibrary Loan</a></li>
+                    <li><a href="#">Research Help</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> SKRR ENGINEERING COLLEGE</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bhimavaram, Andhra Pradesh, India</p>
+                <p><i class="fas fa-phone"></i> 91 (8816) 223332</p>
+                <p><i class="fas fa-envelope"></i> library@college.edu</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 10:00 PM<br>Sat-Sun: 10:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 College Library Management System. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
