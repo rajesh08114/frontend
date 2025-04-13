@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         designation: document.getElementById('edit-designation').value,
         phone: document.getElementById('edit-phone').value,
       };
-  
+    })
       // Send updated details to the backend
      
     const editButton = document.getElementById('edit-button');
@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Toggle the visibility of the "Edit Details" section
   editButton.addEventListener('click', function () {
+    // Prevent default action of the button
+    console.log('Edit button clicked');
     if (editDetailsSection.style.display === 'none') {
       editDetailsSection.style.display = 'block'; // Show the section
       editButton.textContent = 'Cancel'; // Change button text to "Cancel"
@@ -29,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
       editButton.textContent = 'Edit'; // Change button text back to "Edit"
     }
   });
-  });
+  
 
 })
