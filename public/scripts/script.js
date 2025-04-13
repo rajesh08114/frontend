@@ -103,6 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
     });
 
+
+    document.getElementById("view").addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent the card click event
+        
+        window.location.href = './public/pages/book.html'; // Redirect to book details page
+    });
     
    // Smooth scrolling for navigation
 

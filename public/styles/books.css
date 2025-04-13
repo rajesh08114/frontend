@@ -422,3 +422,27 @@
         padding-left: 20px;
     }
   }  
+
+  @media (max-width: 480px) {
+
+  
+    .search-box {
+        flex-direction: column;
+    }
+  
+    .search-box input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+  
+    .search-box button {
+        border-radius: 4px;
+        padding: 12px;
+    }
+    nav ul li  {
+      margin: 0 6px;
+      font-size: 0.4rem;
+  
+  }
+  
+  }

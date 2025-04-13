@@ -676,4 +676,10 @@ footer {
       border-radius: 4px;
       padding: 12px;
   }
+  nav ul li  {
+    margin: 0 6px;
+    font-size: 0.4rem;
+
+}
+
 }
