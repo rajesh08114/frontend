@@ -102,13 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
          postLogin();
         
     });
-
-
-    document.getElementById("view").addEventListener('click', function(e) {
+const view =document.querySelectorAll("#view")
+view.forEach(el =>{
+    el.addEventListener('click', function(e) {
         e.stopPropagation(); // Prevent the card click event
         
         window.location.href = './public/pages/book.html'; // Redirect to book details page
     });
+})
+   
     
    // Smooth scrolling for navigation
 
